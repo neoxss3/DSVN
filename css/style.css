@@ -201,6 +201,7 @@ footer {
 
 @media (max-width: 900px) {
 
+  /* ===== RESET MOBILE LAYOUT ===== */
   html, body {
     height: auto;
     margin: 0;
@@ -223,49 +224,67 @@ footer {
     height: 38px;
   }
 
-  /* ===== CONTAINER (NO MORE WHITE EDGE) ===== */
+  .nav-left, .nav-right {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  /* ===== CONTAINER ===== */
   .container {
     max-width: 100%;
     width: 100%;
-    padding: 0;              /* ❗ remove padding gây hở viền */
     margin: 0;
+    padding: 0;                 /* ❗ bỏ padding để không hở viền */
     display: block;
     background: white;
-    border-radius: 12px 12px 0 0;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;          /* ❗ chặn lòi UI */
   }
 
+  /* ===== DETAIL ===== */
   .detail {
-    display: block;
+    display: block !important; /* ❗ phá flex desktop */
+    width: 100%;
     height: auto;
     max-height: none;
   }
 
   .left, .right {
-    width: 100%;
+    width: 100% !important;
+    min-width: 0 !important;   /* ❗ chống tràn ngang */
     padding: 0;
   }
 
-  /* ===== IMAGE CARD ===== */
+  /* ===== IMAGE FRAME (NO CROP) ===== */
   .image-frame {
-    width: calc(100% - 24px);    /* ❗ tạo lề đều 2 bên */
-    margin: 12px auto 0 auto;
-    max-height: 65vh;
-    overflow: hidden;
+    width: calc(100% - 24px);
+    margin: 12px auto 0;
+    height: 60vh;                 /* khung cố định */
+    max-height: 520px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.18);
-    background: #000;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,.25);
   }
 
   .image-frame img {
-    width: 100%;
-    height: auto;              /* ❗ không crop nữa */
-    object-fit: contain;       /* ❗ giữ toàn ảnh */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;                 /* ❗ không fill */
+    height: auto;                /* ❗ không crop */
+    object-fit: contain;         /* ❗ giữ trọn ảnh */
     display: block;
   }
 
   /* ===== TEXT ===== */
   .right {
-    padding: 16px 14px 24px;
+    padding: 18px 16px 26px;
   }
 
   .right h1 {
@@ -275,13 +294,14 @@ footer {
 
   .right p {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.65;
+    word-break: break-word;
   }
 
-  /* ===== FOOTER (NO WHITE GAP) ===== */
+  /* ===== FOOTER ===== */
   footer {
-    padding: 20px 12px;
     margin: 0;
+    padding: 22px 14px;
   }
 
   .footer-grid {
@@ -289,4 +309,5 @@ footer {
     gap: 14px;
     text-align: center;
   }
+
 }
