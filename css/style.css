@@ -42,30 +42,6 @@ header img {
   z-index: 2;
 }
 
-.nav-left, .nav-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  display: flex;
-  gap: 25px;
-  font-weight: 600;
-}
-
-.nav-left { left: 40px; }
-.nav-right { right: 40px; }
-
-.nav-left a, .nav-right a {
-  color: white;
-  text-decoration: none;
-  transition: .3s;
-}
-
-.nav-left a:hover,
-.nav-right a:hover {
-  color: var(--rail-yellow);
-}
-
 /* =========================
    MAIN CONTAINER (AUTO HEIGHT)
 ========================= */
@@ -223,34 +199,94 @@ footer {
   display: flex;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 900px) {
 
-  .detail {
+  html, body {
+    height: auto;
+    margin: 0;
+    overflow-x: hidden;
+    background: #f2f4f7;
+  }
+
+  body {
+    display: block;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    padding: 10px 12px;
     flex-direction: column;
+    gap: 6px;
+  }
+
+  header img {
+    height: 38px;
+  }
+
+  /* ===== CONTAINER (NO MORE WHITE EDGE) ===== */
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;              /* ❗ remove padding gây hở viền */
+    margin: 0;
+    display: block;
+    background: white;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .detail {
+    display: block;
+    height: auto;
+    max-height: none;
   }
 
   .left, .right {
     width: 100%;
-    height: 50%;
-    padding: 30px;
+    padding: 0;
   }
 
-  header {
-    flex-direction: column;
-    gap: 10px;
+  /* ===== IMAGE CARD ===== */
+  .image-frame {
+    width: calc(100% - 24px);    /* ❗ tạo lề đều 2 bên */
+    margin: 12px auto 0 auto;
+    max-height: 65vh;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    background: #000;
   }
 
-  .nav-left, .nav-right {
-    position: static;
-    transform: none;
+  .image-frame img {
+    width: 100%;
+    height: auto;              /* ❗ không crop nữa */
+    object-fit: contain;       /* ❗ giữ toàn ảnh */
+    display: block;
+  }
+
+  /* ===== TEXT ===== */
+  .right {
+    padding: 16px 14px 24px;
+  }
+
+  .right h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .right p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ===== FOOTER (NO WHITE GAP) ===== */
+  footer {
+    padding: 20px 12px;
+    margin: 0;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
     text-align: center;
   }
 }
