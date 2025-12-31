@@ -1,17 +1,18 @@
 /* =========================
    THEME – VIETNAM RAILWAY
 ========================= */
-:root{
-  --rail-red:#b11226;
-  --rail-blue:#0b3c6d;
-  --rail-light:#f2f6fa;
-  --rail-yellow:#ffd166;
+:root {
+  --rail-red: #b11226;
+  --rail-blue: #0b3c6d;
+  --rail-light: #f2f6fa;
+  --rail-yellow: #ffd166;
 }
 
 /* =========================
    FULL SCREEN LAYOUT
 ========================= */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Arial;
@@ -19,7 +20,7 @@ html, body {
 
 body {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;  /* 🔥 quan trọng */
+  grid-template-rows: auto minmax(0, 1fr) auto; /* 🔥 quan trọng */
   background: url("../assets/bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -34,7 +35,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 header img {
@@ -49,7 +50,7 @@ header img {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255, 255, 255, 0.96);
   padding: 40px;
   display: flex;
   align-items: center;
@@ -65,13 +66,13 @@ header img {
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 220px);
-  background: transparent;   /* ❌ bỏ card */
+  background: transparent; /* ❌ bỏ card */
   border-radius: 0;
   box-shadow: none;
 }
 
-
-.left, .right {
+.left,
+.right {
   width: 50%;
   padding: 60px 50px;
   display: flex;
@@ -109,8 +110,8 @@ footer {
 .footer-bottom {
   margin-top: 25px;
   text-align: center;
-  opacity: .7;
-  border-top: 1px solid rgba(255,255,255,.3);
+  opacity: 0.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 15px;
 }
 
@@ -141,7 +142,7 @@ footer {
 }
 
 .product-item a:hover {
-  opacity: .85;
+  opacity: 0.85;
 }
 
 /* ===== IMAGE FRAME ===== */
@@ -149,7 +150,7 @@ footer {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   cursor: zoom-in;
 }
 
@@ -157,7 +158,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .image-frame:hover img {
@@ -171,7 +172,7 @@ footer {
   bottom: 15px;
   font-size: 28px;
   color: white;
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 8px 12px;
   border-radius: 50%;
 }
@@ -180,7 +181,7 @@ footer {
 .image-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.75);
+  background: rgba(0, 0, 0, 0.75);
   display: none;
   justify-content: center;
   align-items: center;
@@ -192,7 +193,7 @@ footer {
   max-height: 80%;
   object-fit: contain;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.8);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
 
 .image-modal.show {
@@ -200,9 +201,9 @@ footer {
 }
 
 @media (max-width: 900px) {
-
   /* ===== RESET MOBILE LAYOUT ===== */
-  html, body {
+  html,
+  body {
     height: auto;
     margin: 0;
     overflow-x: hidden;
@@ -224,7 +225,8 @@ footer {
     height: 38px;
   }
 
-  .nav-left, .nav-right {
+  .nav-left,
+  .nav-right {
     position: static;
     transform: none;
     width: 100%;
@@ -237,11 +239,11 @@ footer {
     max-width: 100%;
     width: 100%;
     margin: 0;
-    padding: 0;                 /* ❗ bỏ padding để không hở viền */
+    padding: 0; /* ❗ bỏ padding để không hở viền */
     display: block;
     background: white;
     border-radius: 14px 14px 0 0;
-    overflow: hidden;          /* ❗ chặn lòi UI */
+    overflow: hidden; /* ❗ chặn lòi UI */
   }
 
   /* ===== DETAIL ===== */
@@ -252,9 +254,10 @@ footer {
     max-height: none;
   }
 
-  .left, .right {
+  .left,
+  .right {
     width: 100% !important;
-    min-width: 0 !important;   /* ❗ chống tràn ngang */
+    min-width: 0 !important; /* ❗ chống tràn ngang */
     padding: 0;
   }
 
@@ -262,7 +265,7 @@ footer {
   .image-frame {
     width: calc(100% - 24px);
     margin: 12px auto 0;
-    height: 60vh;                 /* khung cố định */
+    height: 60vh; /* khung cố định */
     max-height: 520px;
     border-radius: 16px;
     background: #111;
@@ -270,15 +273,15 @@ footer {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
   }
 
   .image-frame img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;                 /* ❗ không fill */
-    height: auto;                /* ❗ không crop */
-    object-fit: contain;         /* ❗ giữ trọn ảnh */
+    width: auto; /* ❗ không fill */
+    height: auto; /* ❗ không crop */
+    object-fit: contain; /* ❗ giữ trọn ảnh */
     display: block;
   }
 
@@ -310,4 +313,11 @@ footer {
     text-align: center;
   }
 
+  .detail,
+  .container,
+  body {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
 }
