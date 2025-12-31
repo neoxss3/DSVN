@@ -261,6 +261,10 @@ footer {
     padding: 0;
   }
 
+  .right p.right_description {
+    width: calc(100% - 24px);
+  }
+
   /* ===== IMAGE FRAME (NO CROP) ===== */
   .image-frame {
     width: calc(100% - 24px);
