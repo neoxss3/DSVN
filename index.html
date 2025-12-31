@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Product Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="assets/logo.png" />
+    </header>
+
+    <div class="container" id="list"></div>
+
+    <script src="data/product.js"></script>
+    <script>
+      const list = document.getElementById("list");
+      list.className = "product-list";
+
+      PRODUCTS.forEach((p) => {
+        list.innerHTML += `
+            <div class="product-item">
+            <h3>${p.name}</h3>
+            <a href="detail.html?id=${p.id}">Xem chi tiết</a>
+            </div>
+        `;
+            });
+    </script>
+    <footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Đường sắt Việt Nam</h3>
+      <p>Hệ thống bán vé và giới thiệu tàu hỏa toàn quốc.</p>
+    </div>
+
+    <div>
+      <h3>Tuyến nổi bật</h3>
+      <p>Hà Nội – Sài Gòn</p>
+      <p>Đà Nẵng – Huế</p>
+      <p>Nha Trang – TP.HCM</p>
+    </div>
+
+    <div>
+      <h3>Liên hệ</h3>
+      <p>Email: info@railway.vn</p>
+      <p>Hotline: 1900 636 212</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Vietnam Railway Corporation. All rights reserved.
+  </div>
+</footer>
+  </body>
+</html>

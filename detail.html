@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav-left">
+        <a href="index.html">Trang chủ</a>
+        <a href="#">Tuyến tàu</a>
+      </div>
+
+      <img src="assets/logo.png" />
+
+      <div class="nav-right">
+        <a href="#">Đặt vé</a>
+        <a href="#">Liên hệ</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="detail" id="detail"></div>
+    </div>
+
+    <script src="data/product.js"></script>
+    <script>
+      const id = new URLSearchParams(location.search).get("id");
+      const data = PRODUCT_ENUM[id];
+
+      const image = `assets/prod_img/${id}.jpg`;
+
+      document.getElementById("detail").innerHTML = `
+        <div class="left">
+          <div class="image-frame" onclick="openImageModal('${image}')">
+            <img src="${image}">
+          </div>
+        </div>
+        <div class="right">
+          <h1>${data.name}</h1>
+          <p><strong>Xuất xứ:</strong> ${data.origin}</p>
+          <p>${data.description}</p>
+        </div>
+      `;
+
+      function openImageModal(src) {
+        const modal = document.getElementById("imageModal");
+        const img = document.getElementById("modalImage");
+        img.src = src;
+        modal.classList.add("show");
+      }
+
+      function closeImageModal() {
+        document.getElementById("imageModal").classList.remove("show");
+      }
+    </script>
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h3>Đường sắt Việt Nam</h3>
+          <p>Hệ thống bán vé và giới thiệu tàu hỏa toàn quốc.</p>
+        </div>
+
+        <div>
+          <h3>Tuyến nổi bật</h3>
+          <p>Hà Nội – Sài Gòn</p>
+          <p>Đà Nẵng – Huế</p>
+          <p>Nha Trang – TP.HCM</p>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Email: info@railway.vn</p>
+          <p>Hotline: 1900 636 212</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Vietnam Railway Corporation. All rights reserved.
+      </div>
+    </footer>
+
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+      <img id="modalImage" />
+    </div>
+  </body>
+</html>
